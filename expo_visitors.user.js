@@ -17,7 +17,7 @@
     // スタイルを追加して、余白を削除
     const css = `
     .wrapper {margin-top: 80px;}
-    .slot[data-v-6ed96483] {padding-top: 80px;}
+    .slot[data-v-6ed96483] {padding-top: 80px !important;}
     .venue_map .contents[data-v-0f08ea17] {height: 100dvh;}
     #ZMap > div {height: 100dvh}
     `;
