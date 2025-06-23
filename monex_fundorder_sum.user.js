@@ -1,8 +1,12 @@
 // ==UserScript==
 // @name         Monex Fund Order Sum with Clipboard Copy
-// @namespace    http://tampermonkey.net/
+// @namespace    https://github.com/hachiman-oct/
+// @author       hachiman-oct
+// @license      MIT
 // @version      1.1
 // @include      https://mxp1.monex.co.jp/pc/servlet/ITS/fund/*
+// @downloadURL  https://raw.githubusercontent.com/hachiman-oct/personal-userscripts/main/monex_fundorder_sum.user.js
+// @updateURL    https://raw.githubusercontent.com/hachiman-oct/personal-userscripts/main/monex_fundorder_sum.user.js
 // @grant        none
 // @run-at       document-end
 // ==/UserScript==

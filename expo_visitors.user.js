@@ -1,9 +1,13 @@
 // ==UserScript==
 // @name         Expo Visitors ナビ非表示
-// @namespace    http://tampermonkey.net/
+// @namespace    https://github.com/hachiman-oct/
+// @author       hachiman-oct
+// @license      MIT
 // @version      1.0
 // @description  Expo Visitors サイトのナビゲーションバーを非表示にします
 // @match        https://www.expovisitors.expo2025.or.jp/*
+// @downloadURL  https://raw.githubusercontent.com/hachiman-oct/personal-userscripts/main/expo_visitors.user.js
+// @updateURL    https://raw.githubusercontent.com/hachiman-oct/personal-userscripts/main/expo_visitors.user.js
 // @grant        none
 // ==/UserScript==
 
