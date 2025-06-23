@@ -3,7 +3,7 @@
 // @namespace    https://github.com/hachiman-oct/
 // @author       hachiman-oct
 // @license      MIT
-// @version      1.0
+// @version      1.1
 // @description  Expo Visitors サイトのナビゲーションバーを非表示にします
 // @match        https://www.expovisitors.expo2025.or.jp/*
 // @downloadURL  https://raw.githubusercontent.com/hachiman-oct/personal-userscripts/main/expo_visitors.user.js
@@ -16,7 +16,10 @@
     const hideNav = () => {
         const nav = document.querySelector('nav[role="navigation"]');
         if (nav) {
-            nav.style.display = "none";
+            const div = nav.querySelector(".navigation__scroll");
+            if (div) {
+                div.style.display = "none";
+            }
         }
     };
     // ページ読み込み時
