@@ -3,7 +3,7 @@
 // @namespace    https://github.com/hachiman-oct/
 // @author       hachiman-oct
 // @license      MIT
-// @version      1.1
+// @version      1.2
 // @description  Expo Visitors サイトのナビゲーションバーを非表示にします
 // @match        https://www.expovisitors.expo2025.or.jp/*
 // @downloadURL  https://raw.githubusercontent.com/hachiman-oct/personal-userscripts/main/expo_visitors.user.js
@@ -11,8 +11,35 @@
 // @grant        none
 // ==/UserScript==
 
-(function() {
+(function () {
     'use strict';
+
+    // スタイルを追加して、余白を削除
+    const css = `
+    .wrapper {margin-top: 80px;}
+    .slot[data-v-6ed96483] {padding-top: 80px;}
+    .venue_map .contents[data-v-0f08ea17] {height: 100dvh;}
+    #ZMap > div {height: 100dvh}
+    `;
+    const style = document.createElement('style');
+    style.textContent = css;
+    document.head.appendChild(style);
+
+    // #ZMap > div の height 属性を直接削除（/map ページのみ）
+    const removeZMapDivHeight = () => {
+        if (location.pathname === '/map') {
+            const zmapDiv = document.querySelector('#ZMap > div');
+            if (zmapDiv && zmapDiv.style.height) {
+                zmapDiv.style.removeProperty('height');
+            }
+        }
+    };
+    // 初回実行
+    removeZMapDivHeight();
+    // SPA対応: DOM変化時にも実行
+    const zmapObserver = new MutationObserver(removeZMapDivHeight);
+    zmapObserver.observe(document.body, { childList: true, subtree: true });
+
     const hideNav = () => {
         const nav = document.querySelector('nav[role="navigation"]');
         if (nav) {
