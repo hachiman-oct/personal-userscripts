@@ -3,7 +3,7 @@
 // @namespace    https://github.com/hachiman-oct/
 // @author       hachiman-oct
 // @license      MIT
-// @version      1.3
+// @version      1.4
 // @description  Expo Visitors サイトのナビゲーションバーを非表示にします
 // @match        https://www.expovisitors.expo2025.or.jp/*
 // @downloadURL  https://raw.githubusercontent.com/hachiman-oct/personal-userscripts/main/expo_visitors.user.js
@@ -16,7 +16,7 @@
 
     // スタイルを追加して、余白を削除
     const css = `
-    .wrapper {margin-top: 80px;}
+    .wrapper, .wrapper.detail-page {margin-top: 80px;}
     .slot[data-v-6ed96483] {padding-top: 80px !important;}
     .venue_map .contents[data-v-0f08ea17] {height: 100dvh;}
     #ZMap > div {height: 100dvh}
