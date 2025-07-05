@@ -15,7 +15,8 @@
 
     const CSV_URL = 'https://raw.githubusercontent.com/hachiman-oct/personal-userscripts/main/bing/search-queries.csv';
     const STORAGE_KEY = 'bing-repeat-last-id';
-    const searchTimes = 2; // 任意の回数に変更
+    const searchTimes = 90; // 任意の回数に変更
+    const interval = 5000; // 検索実行までの待機時間（ミリ秒）
 
     // CSVをパースする関数
     function parseCSV(text) {
@@ -46,12 +47,14 @@
             // localStorageに進捗を記録
             localStorage.setItem(STORAGE_KEY, nextId);
 
-            // 検索実行
-            const input = document.querySelector("#sb_form_q");
-            const form = document.querySelector("#sb_form");
-            if (input && form) {
-                input.value = nextQuery.query;
-                form.submit();
-            }
+            // intervalミリ秒待ってから検索実行
+            setTimeout(() => {
+                const input = document.querySelector("#sb_form_q");
+                const form = document.querySelector("#sb_form");
+                if (input && form) {
+                    input.value = nextQuery.query;
+                    form.submit();
+                }
+            }, interval);
         });
 })();
