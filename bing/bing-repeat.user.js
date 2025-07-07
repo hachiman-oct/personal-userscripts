@@ -13,6 +13,8 @@
 (function() {
     'use strict';
 
+    console.log("Bing Search Repeat script loaded");
+
     const CSV_URL = 'https://raw.githubusercontent.com/hachiman-oct/personal-userscripts/main/bing/search-queries.csv';
     const STORAGE_KEY = 'bing-repeat-last-id';
     const searchTimes = 90; // 任意の回数に変更
@@ -67,6 +69,7 @@
                     waitForElement("#sb_form_q"),
                     waitForElement("#sb_form")
                 ]).then(([input, form]) => {
+                    console.log(`Searching for: ${nextQuery.query}`);
                     input.value = nextQuery.query;
                     form.submit();
                 });

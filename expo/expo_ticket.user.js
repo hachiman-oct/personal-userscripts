@@ -3,7 +3,8 @@
 // @namespace    https://github.com/hachiman-oct/
 // @author       hachiman-oct
 // @license      MIT
-// @version      0.1
+// @version      1.0
+// @description  Automates the ticket selection and agent ticket input process on Expo 2025
 // @match        https://ticket.expo2025.or.jp/*
 // @downloadURL  https://raw.githubusercontent.com/hachiman-oct/personal-userscripts/main/expo/expo_ticket.user.js
 // @updateURL    https://raw.githubusercontent.com/hachiman-oct/personal-userscripts/main/expo/expo_ticket.user.js
@@ -117,9 +118,9 @@
     }
 
     async function mainProcess() {
-        if (location.pathname === pageMap.agent_ticket) {
+        if (location.pathname.includes(pageMap.agent_ticket)) {
             await inputAgentTicketID();
-        } else if (location.pathname === pageMap.ticket_selection) {
+        } else if (location.pathname.includes(pageMap.ticket_selection)) {
             const ticketList = await waitForElement('[data-list-type="myticket_send"]');
             const selectedTicket = ticketList.querySelectorAll('li').length;
             if (selectedTicket == 1) {
