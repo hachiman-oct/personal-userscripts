@@ -8,3 +8,5 @@ The license is MIT.
 [expo_visitors.user.js](https://raw.githubusercontent.com/hachiman-oct/personal-userscripts/main/expo/expo_visitors.user.js)
 
 [expo_ticket.user.js](https://raw.githubusercontent.com/hachiman-oct/personal-userscripts/main/expo/expo_ticket.user.js)
+
+[expo_ticket_restyle.user.js](https://raw.githubusercontent.com/hachiman-oct/personal-userscripts/main/expo/expo_ticket_restyle.user.js)
