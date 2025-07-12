@@ -21,72 +21,58 @@
         agent_ticket: '/agent_ticket/',
     };
 
-    function waitForElement(selector, timeout = 10000) {
-        return new Promise((resolve, reject) => {
-            const interval = 100;
-            let elapsed = 0;
-            const timer = setInterval(() => {
-                const el = document.querySelector(selector);
-                if (el) {
-                    console.log('Element found:', selector);
-                    clearInterval(timer);
-                    resolve(el);
-                } else if ((elapsed += interval) >= timeout) {
-                    clearInterval(timer);
-                    reject(new Error('Element not found: ' + selector));
-                }
-            }, interval);
-        });
-    }
+    // waitForElement関数は不要になったため削除
 
     async function inputAgentTicketID() {
         console.log("inputAgentTicketID function called");
-
         const agent_ticket_id = '4XBNNK525F';
-        const inputElement = await waitForElement("input#agent_ticket_id_register");
-        const buttonElement = await waitForElement("button.style_main__register_btn__FHBxM");
-
-        // Reactの入力値を強制的に設定
-        const nativeInputValueSetter = Object.getOwnPropertyDescriptor(
-            window.HTMLInputElement.prototype,
-            "value"
-        ).set;
-        nativeInputValueSetter.call(inputElement, agent_ticket_id);
-        const event = new Event('input', { bubbles: true });
-        inputElement.dispatchEvent(event);
-
-        // ボタンが有効になるまで待ってクリック
         setTimeout(() => {
-            console.log("Clicking the button...");
-            buttonElement.click();
-        }, 100);
-
-        // agentTicketFigureが出てくるまで待つ
-        try {
-            const agentTicketFigure = await waitForElement("div.fig-ticket");
-            const addBtn = document.querySelectorAll("button.basic-btn.type2")[1];
-            if (addBtn) {
-                addBtn.click();
+            const inputElement = document.querySelector("input#agent_ticket_id_register");
+            const buttonElement = document.querySelector("button.style_main__register_btn__FHBxM");
+            if (inputElement && buttonElement) {
+                // Reactの入力値を強制的に設定
+                const nativeInputValueSetter = Object.getOwnPropertyDescriptor(
+                    window.HTMLInputElement.prototype,
+                    "value"
+                ).set;
+                nativeInputValueSetter.call(inputElement, agent_ticket_id);
+                const event = new Event('input', { bubbles: true });
+                inputElement.dispatchEvent(event);
+                setTimeout(() => {
+                    console.log("Clicking the button...");
+                    buttonElement.click();
+                    setTimeout(() => {
+                        const agentTicketFigure = document.querySelector("div.fig-ticket");
+                        const addBtn = document.querySelectorAll("button.basic-btn.type2")[1];
+                        if (agentTicketFigure && addBtn) {
+                            addBtn.click();
+                        }
+                    }, 500);
+                }, 100);
+            } else {
+                console.warn("inputElementまたはbuttonElementが見つかりませんでした。");
             }
-        } catch (e) {
-            console.error(e);
-        }
+        }, 5000);
     }
 
     async function selectTickets() {
         console.log("selectTickets function called");
-
-        const selectAllBtn = await waitForElement("label.select-all");
-        selectAllBtn.click();
-
-        try {
-            const toSendBtn = await waitForElement("a.to-send.type2");
-            setTimeout(() => {
-                toSendBtn.click();
-            }, 100);
-        } catch (e) {
-            console.error("No 'to send' button found.");
-        }
+        setTimeout(() => {
+            const selectAllBtn = document.querySelector("label.select-all");
+            if (selectAllBtn) {
+                selectAllBtn.click();
+                setTimeout(() => {
+                    const toSendBtn = document.querySelector("a.to-send.type2");
+                    if (toSendBtn) {
+                        toSendBtn.click();
+                    } else {
+                        console.error("No 'to send' button found.");
+                    }
+                }, 100);
+            } else {
+                console.error("No 'select all' button found.");
+            }
+        }, 5000);
     }
 
     function observeAndRun(mainFunc) {
@@ -121,14 +107,20 @@
         if (location.pathname.includes(pageMap.agent_ticket)) {
             await inputAgentTicketID();
         } else if (location.pathname.includes(pageMap.ticket_selection)) {
-            const ticketList = await waitForElement('[data-list-type="myticket_send"]');
-            const selectedTicket = ticketList.querySelectorAll('li').length;
-            if (selectedTicket == 1) {
-                const addBtn = await waitForElement("a.type1");
-                addBtn.click();
-            } else if (selectedTicket > 1) {
-                await selectTickets();
-            }
+            setTimeout(() => {
+                const ticketList = document.querySelector('[data-list-type="myticket_send"]');
+                if (ticketList) {
+                    const selectedTicket = ticketList.querySelectorAll('li').length;
+                    if (selectedTicket == 1) {
+                        const addBtn = document.querySelector("a.type1");
+                        if (addBtn) addBtn.click();
+                    } else if (selectedTicket > 1) {
+                        selectTickets();
+                    }
+                } else {
+                    console.error("ticketListが見つかりませんでした。");
+                }
+            }, 5000);
         }
     }
 

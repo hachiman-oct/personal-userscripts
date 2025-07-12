@@ -31,23 +31,7 @@
         });
     }
 
-    function waitForElement(selector, timeout = 10000) {
-        return new Promise((resolve, reject) => {
-            const interval = 100;
-            let elapsed = 0;
-            const timer = setInterval(() => {
-                const el = document.querySelector(selector);
-                if (el) {
-                    console.log('Element found:', selector);
-                    clearInterval(timer);
-                    resolve(el);
-                } else if ((elapsed += interval) >= timeout) {
-                    clearInterval(timer);
-                    reject(new Error('Element not found: ' + selector));
-                }
-            }, interval);
-        });
-    }
+    // waitForElement関数は不要になったため削除
 
     // メイン処理
     fetch(CSV_URL)
@@ -65,14 +49,15 @@
             localStorage.setItem(STORAGE_KEY, nextId);
 
             setTimeout(() => {
-                Promise.all([
-                    waitForElement("#sb_form_q"),
-                    waitForElement("#sb_form")
-                ]).then(([input, form]) => {
+                const input = document.querySelector("#sb_form_q");
+                const form = document.querySelector("#sb_form");
+                if (input && form) {
                     console.log(`Searching for: ${nextQuery.query}`);
                     input.value = nextQuery.query;
                     form.submit();
-                });
+                } else {
+                    console.warn("InputまたはFormが見つかりませんでした。");
+                }
             }, interval);
         });
 })();
