@@ -26,7 +26,8 @@
         const css = `
         td.itile_cate_default,
         li.next-button,
-        input[type='button'] {
+        input[type='button'],
+        table.qb {
             background: none !important;
         }
         td.itile_cate_select {
