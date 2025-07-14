@@ -3,7 +3,7 @@
 // @namespace    https://github.com/hachiman-oct/
 // @author       hachiman-oct
 // @license      MIT
-// @version      0.1
+// @version      1.0
 // @match        https://nsv.cue-monitor.jp/*
 // @downloadURL  https://raw.githubusercontent.com/hachiman-oct/personal-userscripts/main/cue-monitor/cue-monitor_restyle.user.js
 // @updateURL    https://raw.githubusercontent.com/hachiman-oct/personal-userscripts/main/cue-monitor/cue-monitor_restyle.user.js

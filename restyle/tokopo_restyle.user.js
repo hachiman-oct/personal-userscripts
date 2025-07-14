@@ -3,7 +3,7 @@
 // @namespace    https://github.com/hachiman-oct/
 // @author       hachiman-oct
 // @license      MIT
-// @version      0.1
+// @version      1.0
 // @match        https://tokopo.jp/*
 // @downloadURL  https://raw.githubusercontent.com/hachiman-oct/personal-userscripts/main/restyle/tokopo_restyle.user.js
 // @updateURL    https://raw.githubusercontent.com/hachiman-oct/personal-userscripts/main/restyle/tokopo_restyle.user.js

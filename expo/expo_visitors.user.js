@@ -3,12 +3,13 @@
 // @namespace    https://github.com/hachiman-oct/
 // @author       hachiman-oct
 // @license      MIT
-// @version      1.5
+// @version      1.6
 // @description  Expo Visitors サイトのナビゲーションバーを非表示にします
 // @match        https://www.expovisitors.expo2025.or.jp/*
 // @downloadURL  https://raw.githubusercontent.com/hachiman-oct/personal-userscripts/main/expo/expo_visitors.user.js
 // @updateURL    https://raw.githubusercontent.com/hachiman-oct/personal-userscripts/main/expo/expo_visitors.user.js
 // @grant        none
+// @run-at       document-end
 // ==/UserScript==
 
 (function () {
@@ -21,6 +22,7 @@
     .venue_map .contents[data-v-0f08ea17] {height: 100dvh;}
     #ZMap > div {height: 100dvh}
     `;
+    
     const style = document.createElement('style');
     style.textContent = css;
     document.head.appendChild(style);
