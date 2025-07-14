@@ -12,3 +12,5 @@ The license is MIT.
 [expo_ticket_restyle.user.js](https://raw.githubusercontent.com/hachiman-oct/personal-userscripts/main/expo/expo_ticket_restyle.user.js)
 
 [cue-monitor_restyle.user.js](https://raw.githubusercontent.com/hachiman-oct/personal-userscripts/main/cue-monitor/cue-monitor_restyle.user.js)
+
+[cue-monitor_login.user.js](https://raw.githubusercontent.com/hachiman-oct/personal-userscripts/main/cue-monitor/cue-monitor_login.user.js)
