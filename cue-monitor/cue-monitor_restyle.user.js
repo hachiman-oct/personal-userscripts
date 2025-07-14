@@ -17,26 +17,8 @@
     console.log("Cue Monitor Restyle script loaded");
 
     const pageMap = {
-        asking_pwd: '/sp/mypage/asking_pwd.html',
         answer: '/ans/pc/',
     };
-
-
-    function clickIfExists(selector) {
-        const el = document.querySelector(selector);
-        if (!el) {
-            console.warn(`"${selector}" not found`);
-            return false;
-        }
-        el.click();
-        return true;
-    }
-
-    if (location.pathname.includes(pageMap.asking_pwd)) {
-        console.log("Asking password page detected");
-        if (!clickIfExists("label.checkbox-inline")) return;
-        clickIfExists("button[type='submit']");
-    }
 
     if (location.pathname.includes(pageMap.answer)) {
         console.log("Answer page detected");
@@ -56,6 +38,4 @@
         style.textContent = css;
         document.head.appendChild(style);
     }
-
-
 })();

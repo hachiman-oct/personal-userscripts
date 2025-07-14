@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Cue Monitor Restyle
+// @name         Cue Monitor Login
 // @namespace    https://github.com/hachiman-oct/
 // @author       hachiman-oct
 // @license      MIT
