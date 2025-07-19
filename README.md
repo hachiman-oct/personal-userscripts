@@ -18,3 +18,5 @@ The license is MIT.
 [cue-monitor_login.user.js](https://raw.githubusercontent.com/hachiman-oct/personal-userscripts/main/cue-monitor/cue-monitor_login.user.js)
 
 [tokopo_restyle.user.js](https://raw.githubusercontent.com/hachiman-oct/personal-userscripts/main/restyle/tokopo_restyle.user.js)
+
+[adblock.user.js](https://raw.githubusercontent.com/hachiman-oct/personal-userscripts/main/adblock/adblock.user.js)
