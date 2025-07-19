@@ -4,7 +4,7 @@
 // @author       hachiman-oct
 // @description  A userscript to block common ad elements across various websites.
 // @license      MIT
-// @version      0.1
+// @version      1.0
 // @match        *://*/*
 // @downloadURL  https://raw.githubusercontent.com/hachiman-oct/personal-userscripts/main/adblock/adblock.user.js
 // @updateURL    https://raw.githubusercontent.com/hachiman-oct/personal-userscripts/main/adblock/adblock.user.js
@@ -38,6 +38,8 @@
         '[class*="adBanner"]',
         '[class*="Yads"]',
         '[aria-label="広告"]',
+        '[aria-label="Ads"]',
+        '[data-layout="ad"]',
         '[class*="AdHolder"]',
         '[class^="AdHolder"]',
     ];
