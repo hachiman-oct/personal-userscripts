@@ -14,26 +14,17 @@
 (function () {
     'use strict';
 
-    console.log("Cue Monitor Restyle script loaded");
+    console.log("Cue Monitor Login script loaded");
 
-    const pageMap = {
-        asking_pwd: '/sp/mypage/asking_pwd.html',
-    };
+    const pageList = [
+        '/sp/mypage/asking_pwd.html',
+        '/sp/mypage/my_info_foc.html'
+    ];
 
+    const shouldRedirect = pageList.some(pagePath => location.pathname.includes(pagePath));
 
-    function clickIfExists(selector) {
-        const el = document.querySelector(selector);
-        if (!el) {
-            console.warn(`"${selector}" not found`);
-            return false;
-        }
-        el.click();
-        return true;
-    }
-
-    if (location.pathname.includes(pageMap.asking_pwd)) {
-        console.log("Asking password page detected");
-        if (!clickIfExists("label.checkbox-inline")) return;
-        clickIfExists("button[type='submit']");
+    if (shouldRedirect) {
+        console.log(`Redirecting from ${location.pathname} to mytop.html`);
+        window.location.href = 'https://mypage.cue-monitor.jp/sp/mypage/mytop.html';
     }
 })();
