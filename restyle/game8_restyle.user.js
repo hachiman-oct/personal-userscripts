@@ -5,8 +5,8 @@
 // @license      MIT
 // @version      0.1
 // @match        https://game8.jp/*
-// @downloadURL  https://raw.githubusercontent.com/hachiman-oct/personal-userscripts/main/adblock/game8_restyle.user.js
-// @updateURL    https://raw.githubusercontent.com/hachiman-oct/personal-userscripts/main/adblock/game8_restyle.user.js
+// @downloadURL  https://raw.githubusercontent.com/hachiman-oct/personal-userscripts/main/restyle/game8_restyle.user.js
+// @updateURL    https://raw.githubusercontent.com/hachiman-oct/personal-userscripts/main/restyle/game8_restyle.user.js
 // @grant        none
 // @run-at       document-end
 // ==/UserScript==
@@ -23,6 +23,10 @@
 
     const commonStyles = `
     #jump_header,
+    [class^="ad-"],
+    [id^="ad-"],
+    [id^="ad-"],
+    [id^="google_ads"],
     browsispot,
     #zucks_wipead,
     .l-fixedGameHeader__theme,
