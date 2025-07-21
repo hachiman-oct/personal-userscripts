@@ -1,0 +1,18 @@
+! My Custom Filter List [x.com]
+! Last Updated: 2025-07-21
+
+! ===== 広告非表示 =====
+x.com##div[data-testid="super-upsell-UpsellButtonRenderProperties"]
+x.com##div[data-testid="verified_profile_visitor_upsell"]
+x.com##div[aria-label="タイムライン: 話題を検索"]
+x.com##a[href="/messages"]
+x.com##a[href="/i/grok"]
+x.com##a[href="/i/premium_sign_up"]
+x.com##a[href="/i/verified-orgs-signup"]
+x.com##a[href="/i/monetization"]
+x.com##a[href="/jobs"]
+x.com##a[href="https://ads.x.com/?ref=gl-tw-tw-twitter-ads-rweb"]
+x.com##article[data-testid="tweet"]:has(div[data-testid="placementTracking"])
+x.com##a[href="/compose/post"]
+x.com##button[aria-label="プロフィールの要約"]
+x.com##button[data-testid="sendDMFromProfile"]

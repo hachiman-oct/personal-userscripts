@@ -1,12 +1,10 @@
 // ==UserScript==
-// @name         Bing Search Repeat
+// @name         Bing Search Repeat Beta
 // @namespace    https://github.com/hachiman-oct/
 // @author       hachiman-oct
 // @license      MIT
-// @version      1.1
+// @version      0.1
 // @match        https://www.bing.com/*
-// @downloadURL  https://raw.githubusercontent.com/hachiman-oct/personal-userscripts/main/bing/bing-repeat.user.js
-// @updateURL    https://raw.githubusercontent.com/hachiman-oct/personal-userscripts/main/bing/bing-repeat.user.js
 // @grant        none
 // @run-at       document-end
 // ==/UserScript==
@@ -36,6 +34,8 @@
     fetch(CSV_URL)
         .then(res => res.text())
         .then(csvText => {
+            console.log("CSV data fetched successfully");
+            console.log(csvText);
             const queries = parseCSV(csvText);
             let lastId = parseInt(localStorage.getItem(STORAGE_KEY) || '0', 10);
 
