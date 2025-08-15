@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Monex Fund Order Sum with Clipboard Copy
+// @name         Monex Restyle
 // @namespace    https://github.com/hachiman-oct/
 // @author       hachiman-oct
 // @license      MIT
