@@ -34,6 +34,9 @@
     if (location.pathname.includes(pageMap.home)) {
 
         const css = `
+        a[href="https://member-cpa.net/cpa-message/"],
+        div.sns-wrap,
+        div.su-box:has(div.su-box-content > p > a[href="https://www.cpaonline.jp/shopbrand/ct189"]),
         div.su-box:has(div.su-box-content > p > a[href="https://forms.gle/Yuwi6iUYijTs8qtS9"]) {
             display: none;
         }
