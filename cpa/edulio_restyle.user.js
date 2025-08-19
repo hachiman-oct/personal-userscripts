@@ -22,8 +22,17 @@
     };
 
     const commonStyles = `
+    h1:has(a[href="https://tlp.edulio.com/cpa/static_page/"]),
+    h2,
     span#mdl-navtitle-cart,
-    span#mdl-navigation-cart {
+    span#mdl-navigation-cart,
+    nav#mdl-navigation-cart,
+    li.mdl-menu__item:has(a[href="/cpa/mypage/chapter/qualification_id:4495"]),
+    li.mdl-menu__item:has(a[href="/cpa/mypage/chapter/qualification_id:2591"]),
+    li.mdl-menu__item:has(a[href="/cpa/mypage/chapter/qualification_id:4495"]),
+    li.mdl-menu__item:has(a[href="/cpa/mypage/chapter/qualification_id:5265"]),
+    li.mdl-menu__item:has(a[href="/cpa/mypage/chapter/qualification_id:4308"]),
+    li.mdl-menu__item:has(a[href="/cpa/mypage/chapter/qualification_id:9753"]) {
         display: none !important;
     }
     `;
