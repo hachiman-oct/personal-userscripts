@@ -3,7 +3,7 @@
 // @namespace    https://github.com/hachiman-oct/
 // @author       hachiman-oct
 // @license      MIT
-// @version      0.1
+// @version      0.2
 // @match        https://tlp.edulio.com/*
 // @downloadURL  https://raw.githubusercontent.com/hachiman-oct/personal-userscripts/main/cpa/edulio_restyle.user.js
 // @updateURL    https://raw.githubusercontent.com/hachiman-oct/personal-userscripts/main/cpa/edulio_restyle.user.js
