@@ -4,7 +4,7 @@
 // @author       hachiman-oct
 // @license      MIT
 // @version      1.1
-// @include      https://mxp1.monex.co.jp/pc/servlet/ITS/fund/*
+// @include      https://mxp1.monex.co.jp/*
 // @downloadURL  https://raw.githubusercontent.com/hachiman-oct/personal-userscripts/main/monex/monex_restyle.user.js
 // @updateURL    https://raw.githubusercontent.com/hachiman-oct/personal-userscripts/main/monex/monex_restyle.user.js
 // @grant        none
