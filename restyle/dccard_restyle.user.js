@@ -3,7 +3,7 @@
 // @namespace    https://github.com/hachiman-oct/
 // @author       hachiman-oct
 // @license      MIT
-// @version      0.1
+// @version      1.1
 // @match        https://club.dccard.co.jp/*
 // @downloadURL  https://raw.githubusercontent.com/hachiman-oct/personal-userscripts/main/restyle/dccard_restyle.user.js
 // @updateURL    https://raw.githubusercontent.com/hachiman-oct/personal-userscripts/main/restyle/dccard_restyle.user.js
@@ -19,11 +19,11 @@
 
     const pageMap = {
         login: '/service/members/htmls/prp/cookie/index.htm',
+        second: '/service/members/asps/AddNinsyoItem.asp'
     };
 
     if (location.pathname.includes(pageMap.login)) {
         console.log("Login page detected");
-
 
         // --- 前回の処理：特定のtd内の要素を非表示にする ---
 
@@ -116,5 +116,19 @@
         if (inputPass) {
             inputPass.setAttribute('placeholder', 'password');
         }
+    }
+
+    if (location.pathname.includes(pageMap.second)) {
+        console.log("Second page detected");
+        const textInputs = document.querySelectorAll('input[type="text"]');
+
+        // 見つかったすべての要素に対して処理を繰り返す
+        textInputs.forEach(input => {
+            // type属性を"number"に変更
+            input.type = 'number';
+
+            // inputmode属性を"numeric"に設定
+            input.inputmode = 'numeric';
+        });
     }
 })();

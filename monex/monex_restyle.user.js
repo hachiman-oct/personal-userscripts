@@ -3,8 +3,8 @@
 // @namespace    https://github.com/hachiman-oct/
 // @author       hachiman-oct
 // @license      MIT
-// @version      1.1
-// @include      https://mxp1.monex.co.jp/*
+// @version      1.2
+// @include      https://*.monex.co.jp/*
 // @downloadURL  https://raw.githubusercontent.com/hachiman-oct/personal-userscripts/main/monex/monex_restyle.user.js
 // @updateURL    https://raw.githubusercontent.com/hachiman-oct/personal-userscripts/main/monex/monex_restyle.user.js
 // @grant        none
@@ -37,7 +37,9 @@
     // 2. セレクタのパーツをカンマで連結して、最終的なCSSルールを作成
     const cssRule = `
         ${selectors.join(',\n')},
-        li[class="list-group-item2 lp15 rp0 group1 notToggleLink sp-menu-font16"] {
+        li[class="list-group-item2 lp15 rp0 group1 notToggleLink sp-menu-font16"],
+        div#m11AppBanner.m11AppBanner,
+        div[class="cont-box tm15"]:has(img[src="https://info.monex.co.jp/image/security/measure/phishing/fcsp_phishing.png"]) {
             display: none !important;
         }
     `;
