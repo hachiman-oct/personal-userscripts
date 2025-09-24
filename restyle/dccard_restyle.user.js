@@ -3,7 +3,7 @@
 // @namespace    https://github.com/hachiman-oct/
 // @author       hachiman-oct
 // @license      MIT
-// @version      1.1
+// @version      1.3
 // @match        https://club.dccard.co.jp/*
 // @downloadURL  https://raw.githubusercontent.com/hachiman-oct/personal-userscripts/main/restyle/dccard_restyle.user.js
 // @updateURL    https://raw.githubusercontent.com/hachiman-oct/personal-userscripts/main/restyle/dccard_restyle.user.js
@@ -120,6 +120,24 @@
 
     if (location.pathname.includes(pageMap.second)) {
         console.log("Second page detected");
+
+        const selectors = [
+            'div.tel',
+            'div.rightCont',
+            'div.birth > p',
+            'div.birth > ul',
+        ];
+
+        const style = document.createElement('style');
+        style.id = 'amazon-adblock-styles';
+        style.textContent = `
+        ${selectors.join(',\n')} {
+            display: none !important;
+            visibility: hidden !important; /* display:noneが効かない場合のための予備 */
+        }
+        `;
+        document.head.appendChild(style);
+
         const textInputs = document.querySelectorAll('input[type="text"]');
 
         // 見つかったすべての要素に対して処理を繰り返す
@@ -128,7 +146,7 @@
             input.type = 'number';
 
             // inputmode属性を"numeric"に設定
-            input.inputmode = 'numeric';
+            input.setAttribute('inputmode', 'numeric');
         });
     }
 })();
