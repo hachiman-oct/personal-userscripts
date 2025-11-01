@@ -3,7 +3,7 @@
 // @namespace    https://github.com/hachiman-oct/
 // @author       hachiman-oct
 // @license      MIT
-// @version      1.2
+// @version      1.3.0
 // @include      https://*.monex.co.jp/*
 // @downloadURL  https://raw.githubusercontent.com/hachiman-oct/personal-userscripts/main/monex/monex_restyle.user.js
 // @updateURL    https://raw.githubusercontent.com/hachiman-oct/personal-userscripts/main/monex/monex_restyle.user.js
@@ -14,85 +14,62 @@
 (function () {
     'use strict';
 
+    /**
+     * ページ全体に適用するCSSルールを<style>タグとして<head>に追加します。
+     * @param {string} css - 適用するCSSルール文字列
+     */
+    function addGlobalStyle(css) {
+        const styleElement = document.createElement('style');
+        styleElement.textContent = css;
+        document.head.appendChild(styleElement);
+    }
+
     const pageMap = {
-        login: '/pc/ITS/login/LoginIDPassword.jsp',
+        login: '/pc/ITS/login/',
         home: '/pc/servlet/ITS/home/Announce',
         CheckMajorCustmer: '/pc/servlet/ITS/login/CheckMajorCustmer',
-        asset: '/pc/servlet/ITS/asset/AmountList',
     };
 
-    // ▼▼▼ ここに非表示にしたいIDの番号をカンマ区切りで入力 ▼▼▼
+    // 非表示にするハンバーガーメニューのID
     const targetIds = [3, 4, 6, 7, 9, 10, 16, 17, 20];
-    // ▲▲▲ ここまで ▲▲▲
+    const currentPath = location.pathname;
 
-    // targetIdsが空の場合は何もしない
-    if (!targetIds || targetIds.length === 0) {
-        return;
+    // サイト全体で共通の非表示セレクタ
+    const commonSelectors = [
+        ...targetIds.map(id => `ul.list-group.hamburger li:has(a[href="#id${id}"])`),
+        'li.list-group-item2.lp15.rp0.group1.notToggleLink.sp-menu-font16',
+        'div#appBanner'
+    ];
+
+    // ページ固有の非表示セレクタ
+    let pageSpecificSelectors = [];
+
+    if (currentPath.includes(pageMap.login)) {
+        console.log("Login page detected");
+        pageSpecificSelectors = [
+            'p.full_SP:has(img[src="https://info.monex.co.jp/image/security/measure/phishing/fcsp_phishing.png"])',
+            'form#contents > dl',
+            'div.divider.txt-center',
+            'form#contents > p:has(a[onclick="submitDummmyBtn()"])'
+        ];
+    } else if (currentPath.includes(pageMap.home) || currentPath.includes(pageMap.CheckMajorCustmer)) {
+        console.log("Home page detected");
+        pageSpecificSelectors = [
+            'div.box-zabton.type-notice.bm10:has(a[href="https://info.monex.co.jp/service/d-account-linkage/index.html"])'
+        ];
     }
 
-    // 1. 各IDに対応するCSSセレクタのパーツを作成
-    const selectors = targetIds.map(id =>
-        `ul[class="list-group hamburger"] li:has(a[href="#id${id}"])`
-    );
+    // 共通セレクタとページ固有セレクタをすべて結合
+    const allSelectors = [...commonSelectors, ...pageSpecificSelectors];
 
-    // 2. セレクタのパーツをカンマで連結して、最終的なCSSルールを作成
-    const cssRule = `
-        ${selectors.join(',\n')},
-        li[class="list-group-item2 lp15 rp0 group1 notToggleLink sp-menu-font16"],
-        div#m11AppBanner.m11AppBanner {
-            display: none !important;
-        }
-    `;
-
-    // 3. 作成したCSSを<style>タグとしてページの<head>に追加
-    const styleElement = document.createElement('style');
-    styleElement.textContent = cssRule;
-    document.head.appendChild(styleElement);
-
-    if (location.pathname.includes(pageMap.login)) {
-        console.log("home page detected");
-
-        const css = `
-        p[class="full_SP"]:has(img[src="https://info.monex.co.jp/image/security/measure/phishing/fcsp_phishing.png"]),
-        form#contents > dl,
-        div[class="divider txt-center"],
-        form#contents > p:has(a[onclick="submitDummmyBtn()"]) {
-            display: none !important;
-        }
+    if (allSelectors.length > 0) {
+        // 結合したセレクタリストから単一のCSSルールを生成
+        const cssRule = `
+            ${allSelectors.join(',\n')} {
+                display: none !important;
+            }
         `;
-
-        const style = document.createElement('style');
-        style.textContent = css;
-        document.head.appendChild(style);
-    } else if (location.pathname.includes(pageMap.home) || location.pathname.includes(pageMap.CheckMajorCustmer)) {
-        console.log("home page detected");
-
-        const css = `
-        div[id="m11AppBanner"][class="m11AppBanner mt-10"],
-        img[src="https://info.monex.co.jp/news/image/2025/20250529_01/mypage.png"],
-        div[class="box-zabton type-notice bm10"]:has(a[href="https://info.monex.co.jp/service/d-account-linkage/index.html"]),
-        div[class="box-zabton type-notice bm10"]:has(a[href="https://info.monex.co.jp/security/measure/phishing.html#page07"]),
-        ul[class="list-group hamburger"] li:has(a[href="#id4"]),
-        div[class="box-zabton type-notice bm10"]:has(a[href="https://info.monex.co.jp/service/d-account-linkage/index.html"]) {
-            display: none !important;
-        }
-        `;
-
-        const style = document.createElement('style');
-        style.textContent = css;
-        document.head.appendChild(style);
-    } else if (location.pathname.includes(pageMap.asset)) {
-        console.log("asset page detected");
-
-        const css = `
-        div[class="zabton type-info type-firstblock"] {
-            display: none !important;
-        }
-        `;
-
-        const style = document.createElement('style');
-        style.textContent = css;
-        document.head.appendChild(style);
+        // CSSルールを<head>に一度だけ挿入
+        addGlobalStyle(cssRule);
     }
 })();
-
