@@ -15,6 +15,7 @@
     'use strict';
 
     const pageMap = {
+        login: '/pc/ITS/login/LoginIDPassword.jsp',
         home: '/pc/servlet/ITS/home/Announce',
         CheckMajorCustmer: '/pc/servlet/ITS/login/CheckMajorCustmer',
         asset: '/pc/servlet/ITS/asset/AmountList',
@@ -38,8 +39,7 @@
     const cssRule = `
         ${selectors.join(',\n')},
         li[class="list-group-item2 lp15 rp0 group1 notToggleLink sp-menu-font16"],
-        div#m11AppBanner.m11AppBanner,
-        div[class="cont-box tm15"]:has(img[src="https://info.monex.co.jp/image/security/measure/phishing/fcsp_phishing.png"]) {
+        div#m11AppBanner.m11AppBanner {
             display: none !important;
         }
     `;
@@ -49,7 +49,22 @@
     styleElement.textContent = cssRule;
     document.head.appendChild(styleElement);
 
-    if (location.pathname.includes(pageMap.home) || location.pathname.includes(pageMap.CheckMajorCustmer)) {
+    if (location.pathname.includes(pageMap.login)) {
+        console.log("home page detected");
+
+        const css = `
+        p[class="full_SP"]:has(img[src="https://info.monex.co.jp/image/security/measure/phishing/fcsp_phishing.png"]),
+        form#contents > dl,
+        div[class="divider txt-center"],
+        form#contents > p:has(a[onclick="submitDummmyBtn()"]) {
+            display: none !important;
+        }
+        `;
+
+        const style = document.createElement('style');
+        style.textContent = css;
+        document.head.appendChild(style);
+    } else if (location.pathname.includes(pageMap.home) || location.pathname.includes(pageMap.CheckMajorCustmer)) {
         console.log("home page detected");
 
         const css = `
@@ -57,7 +72,8 @@
         img[src="https://info.monex.co.jp/news/image/2025/20250529_01/mypage.png"],
         div[class="box-zabton type-notice bm10"]:has(a[href="https://info.monex.co.jp/service/d-account-linkage/index.html"]),
         div[class="box-zabton type-notice bm10"]:has(a[href="https://info.monex.co.jp/security/measure/phishing.html#page07"]),
-        ul[class="list-group hamburger"] li:has(a[href="#id4"]) {
+        ul[class="list-group hamburger"] li:has(a[href="#id4"]),
+        div[class="box-zabton type-notice bm10"]:has(a[href="https://info.monex.co.jp/service/d-account-linkage/index.html"]) {
             display: none !important;
         }
         `;
