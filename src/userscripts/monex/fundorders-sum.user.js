@@ -5,8 +5,8 @@
 // @license      MIT
 // @version      1.1
 // @include      https://mxp1.monex.co.jp/pc/servlet/ITS/fund/*
-// @downloadURL  https://raw.githubusercontent.com/hachiman-oct/personal-userscripts/main/monex/monex_fundorder_sum.user.js
-// @updateURL    https://raw.githubusercontent.com/hachiman-oct/personal-userscripts/main/monex/monex_fundorder_sum.user.js
+// @downloadURL  https://raw.githubusercontent.com/hachiman-oct/personal-userscripts/main/src/userscripts/monex/fundorders-sum.user.js
+// @updateURL    https://raw.githubusercontent.com/hachiman-oct/personal-userscripts/main/src/userscripts/monex/fundorders-sum.user.js
 // @grant        none
 // @run-at       document-end
 // ==/UserScript==

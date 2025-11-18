@@ -3,10 +3,10 @@
 // @namespace    https://github.com/hachiman-oct/
 // @author       hachiman-oct
 // @license      MIT
-// @version      0.1
+// @version      1.0
 // @match        https://member-cpa.net/*
-// @downloadURL  https://raw.githubusercontent.com/hachiman-oct/personal-userscripts/main/cpa/member-cpa_restyle.user.js
-// @updateURL    https://raw.githubusercontent.com/hachiman-oct/personal-userscripts/main/cpa/member-cpa_restyle.user.js
+// @downloadURL  https://raw.githubusercontent.com/hachiman-oct/personal-userscripts/main/src/userscripts/cpa/member-cpa_restyle.user.js
+// @updateURL    https://raw.githubusercontent.com/hachiman-oct/personal-userscripts/main/src/userscripts/cpa/member-cpa_restyle.user.js
 // @description  A userscript to restyle Member CPA pages by hiding ads and other elements
 // @grant        none
 // @run-at       document-end

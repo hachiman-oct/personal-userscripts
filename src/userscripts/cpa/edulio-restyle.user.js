@@ -1,12 +1,12 @@
 // ==UserScript==
-// @name         edulio Restyle
+// @name         CPA edulio Restyle
 // @namespace    https://github.com/hachiman-oct/
 // @author       hachiman-oct
 // @license      MIT
-// @version      0.2
+// @version      1.0
 // @match        https://tlp.edulio.com/*
-// @downloadURL  https://raw.githubusercontent.com/hachiman-oct/personal-userscripts/main/cpa/edulio_restyle.user.js
-// @updateURL    https://raw.githubusercontent.com/hachiman-oct/personal-userscripts/main/cpa/edulio_restyle.user.js
+// @downloadURL  https://raw.githubusercontent.com/hachiman-oct/personal-userscripts/main/src/userscripts/cpa/edulio-restyle.user.js
+// @updateURL    https://raw.githubusercontent.com/hachiman-oct/personal-userscripts/main/src/userscripts/cpa/edulio-restyle.user.js
 // @description  A userscript to restyle Edulio pages by hiding ads and other elements
 // @grant        none
 // @run-at       document-end
