@@ -3,10 +3,10 @@
 // @namespace    https://github.com/hachiman-oct/
 // @author       hachiman-oct
 // @license      MIT
-// @version      1.3.0
+// @version      1.3.1
 // @include      https://*.monex.co.jp/*
-// @downloadURL  https://raw.githubusercontent.com/hachiman-oct/personal-userscripts/main/monex/monex_restyle.user.js
-// @updateURL    https://raw.githubusercontent.com/hachiman-oct/personal-userscripts/main/monex/monex_restyle.user.js
+// @downloadURL  https://raw.githubusercontent.com/hachiman-oct/personal-userscripts/main/src/userscripts/monex/restyle.user.js
+// @updateURL    https://raw.githubusercontent.com/hachiman-oct/personal-userscripts/main/src/userscripts/monex/restyle.user.js
 // @grant        none
 // @run-at       document-end
 // ==/UserScript==

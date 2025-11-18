@@ -1,12 +1,12 @@
 // ==UserScript==
-// @name         Libra JPN Restyle
+// @name         CPA Libra Restyle
 // @namespace    https://github.com/hachiman-oct/
 // @author       hachiman-oct
 // @license      MIT
-// @version      0.2
+// @version      1.0
 // @match        https://tokyo-cpa.libra.jpn.com/*
-// @downloadURL  https://raw.githubusercontent.com/hachiman-oct/personal-userscripts/main/cpa/libra.jpn_restyle.user.js
-// @updateURL    https://raw.githubusercontent.com/hachiman-oct/personal-userscripts/main/cpa/libra.jpn_restyle.user.js
+// @downloadURL  https://raw.githubusercontent.com/hachiman-oct/personal-userscripts/main/src/userscripts/cpa/libra.jpn_restyle.user.js
+// @updateURL    https://raw.githubusercontent.com/hachiman-oct/personal-userscripts/main/src/userscripts/cpa/libra.jpn_restyle.user.js
 // @grant        none
 // @run-at       document-end
 // ==/UserScript==

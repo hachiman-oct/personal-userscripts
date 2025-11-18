@@ -5,8 +5,8 @@
 // @license      MIT
 // @version      1.0
 // @match        https://nsv.cue-monitor.jp/*
-// @downloadURL  https://raw.githubusercontent.com/hachiman-oct/personal-userscripts/main/cue-monitor/cue-monitor_restyle.user.js
-// @updateURL    https://raw.githubusercontent.com/hachiman-oct/personal-userscripts/main/cue-monitor/cue-monitor_restyle.user.js
+// @downloadURL  https://raw.githubusercontent.com/hachiman-oct/personal-userscripts/main/src/userscripts/cue-monitor/cue-monitor_restyle.user.js
+// @updateURL    https://raw.githubusercontent.com/hachiman-oct/personal-userscripts/main/src/userscripts/cue-monitor/cue-monitor_restyle.user.js
 // @grant        none
 // @run-at       document-end
 // ==/UserScript==

@@ -5,8 +5,8 @@
 // @license      MIT
 // @version      1.3
 // @match        https://club.dccard.co.jp/*
-// @downloadURL  https://raw.githubusercontent.com/hachiman-oct/personal-userscripts/main/restyle/dccard_restyle.user.js
-// @updateURL    https://raw.githubusercontent.com/hachiman-oct/personal-userscripts/main/restyle/dccard_restyle.user.js
+// @downloadURL  https://raw.githubusercontent.com/hachiman-oct/personal-userscripts/main/src/userscripts/dccard/restyle.user.js
+// @updateURL    https://raw.githubusercontent.com/hachiman-oct/personal-userscripts/main/src/userscripts/dccard/restyle.user.js
 // @description  A userscript to restyle DC Card pages by hiding ads and other elements
 // @grant        none
 // @run-at       document-end
