@@ -27,6 +27,7 @@ The license is MIT.
 | **Cue Monitor** | `restyle.user.js` | キューモニターの回答ページの表示を調整します | [Install](https://raw.githubusercontent.com/hachiman-oct/personal-userscripts/main/src/userscripts/cue-monitor/restyle.user.js) |
 | **ToKoPo** | `restyle.user.js` | ToKoPo (都営交通ポイント) サイトのレイアウトを調整します | [Install](https://raw.githubusercontent.com/hachiman-oct/personal-userscripts/main/src/userscripts/tokopo/restyle.user.js) |
 | **DC Card** | `restyle.user.js` | DCカードのサイトのレイアウトを調整します | [Install](https://raw.githubusercontent.com/hachiman-oct/personal-userscripts/main/src/userscripts/dccard/restyle.user.js) |
+| **ASBJ** | `restyle.user.js` | ASBJのサイトのレイアウトを調整します | [Install](https://raw.githubusercontent.com/hachiman-oct/personal-userscripts/main/src/userscripts/asbj/restyle.user.js) |
 
 ## Contents Filters
 
